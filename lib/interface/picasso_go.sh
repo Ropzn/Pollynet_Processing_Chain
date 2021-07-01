@@ -35,7 +35,7 @@ display_help() {
   echo "   -c, --config_file       specify Picasso configuration file"
   echo "                           e.g., 'pollynet_processing_chain_config.json'"
   echo "   --auto                  start automatic data processing"
-  echo "   --check_gdas            reprocess the data when GDAS if ready"
+  echo "   --check_gdas            reprocess polly data when GDAS1 data is ready"
   echo "   --pollyapp_config       specify the path of 'config.private' for the pollyAPP"
   echo "   -h, --help              show help message"
   echo

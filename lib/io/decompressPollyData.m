@@ -53,21 +53,20 @@ else
     config = loadjson(PicassoConfigFile);
 end
 
+fileCounter = 0;
 for iDate = startDate:ceil(endDate)
 
     [thisYear, thisMonth, thisDay] = datevec(iDate);
 
     %% search zip files
-    files = listfile(...
-        fullfile(saveFolder, 'data_zip', sprintf('%04d%02d', thisYear, thisMonth)), ...
-            sprintf('%04d_%02d_%02d.*\\w{2}_\\w{2}_\\w{2}.nc.zip', ...
-                thisYear, thisMonth, thisDay));
+    files = listfile(fullfile(saveFolder, 'data_zip', sprintf('%04d%02d', thisYear, thisMonth)), ...
+            sprintf('%04d_%02d_%02d.*\\w{2}_\\w{2}_\\w{2}.nc.zip', thisYear, thisMonth, thisDay));
 
     if isempty(files)
-        pollyDataFullpath = fullfile(saveFolder, 'data_zip', ...
-                                sprintf('%04d%02d', thisYear, thisMonth));
-        warning('No polly data under %s', pollyDataFullpath);
+        fprintf('No polly data for %s at %s\n', pollyType, datestr(iDate, 'yyyy-mm-dd'));
     end
+
+    fileCounter = fileCounter + length(files);
 
     for iFile = 1:length(files)
 
@@ -103,7 +102,7 @@ for iDate = startDate:ceil(endDate)
         %% unzip polly data to todofolder
         try
             % extract the file 
-            fprintf('--->Extracting %s.\n', pollyZipFile);
+            fprintf('---> Extracting %s.\n', pollyZipFile);
             pollyUnzipFile = unzip(files{iFile}, ...
                 fullfile(todolistFolder, pollyType, 'data_zip'));
         catch
@@ -123,6 +122,12 @@ for iDate = startDate:ceil(endDate)
 
         fclose(fid);
     end
+end
+
+if fileCounter == 0
+    warning('No polly data file was found.');
+else
+    fprintf('%d polly data files was found.\n', fileCounter);
 end
 
 %% convert polly housekeeping temp file to laserlogbook file

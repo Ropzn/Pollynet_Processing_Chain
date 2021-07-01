@@ -3,9 +3,9 @@ function picassoProcHistoryData(startTime, endTime, saveFolder, varargin)
 % USAGE:
 %    [output] = picassoProcHistoryData(startTime, endTime, saveFolder)
 % INPUTS:
-%    startDate: numeric
-%        start date of polly data to be decompressed. i.e, datenum(2015, 1, 1) stands for Jan 1st, 2015.
-%    endDate: numeric
+%    startDate: char
+%        start date of polly data to be decompressed. i.e, '20150101' stands for Jan 1st, 2015.
+%    endDate: char
 %        stop date of polly data to be decompressed.
 %    saveFolder: char
 %        polly data folder. 
@@ -16,6 +16,9 @@ function picassoProcHistoryData(startTime, endTime, saveFolder, varargin)
 %        e.g., arielle
 %    PicassoConfigFile: char
 %        absolute path of Picasso configuration file.
+%    mode: char
+%        If mode was 'a', the polly data info will be appended. If 'w', 
+%        a new todofile will be created.
 % EXAMPLE:
 % HISTORY:
 %    2021-06-27: first edition by Zhenping
@@ -24,8 +27,8 @@ function picassoProcHistoryData(startTime, endTime, saveFolder, varargin)
 p = inputParser;
 p.KeepUnmatched = true;
 
-addRequired(p, 'startTime', @isnumeric);
-addRequired(p, 'endTime', @isnumeric);
+addRequired(p, 'startTime', @ischar);
+addRequired(p, 'endTime', @ischar);
 addRequired(p, 'saveFolder', @ischar);
 addParameter(p, 'pollyType', '', @ischar);
 addParameter(p, 'PicassoConfigFile', '', @ischar);
