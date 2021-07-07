@@ -1,10 +1,10 @@
 {
     "fileinfo_new": "C:/Users/Wiesen/Programmierwiesen/Pollynet/Pollynet_Processing_Chain/todo_filelist/fileinfo_new.txt",
     "doneListFile": "C:/Users/Wiesen/Programmierwiesen/Pollynet/Pollynet_Processing_Chain/recent_plots/done_filelist.txt",
-    "polly_config_folder": "C:/Users/Wiesen/Programmierwiesen/Pollynet/Pollynet_Processing_Chain/Pollynet_Processing_Chain/config",
+    "polly_config_folder": "C:/Users/Wiesen/Programmierwiesen/Pollynet/Pollynet_Processing_Chain/config",
     "log_folder": "C:/Users/Wiesen/Programmierwiesen/Pollynet/Pollynet_Processing_Chain/results/log",
     "gdas1_folder": "C:/Users/Wiesen/Programmierwiesen/Pollynet/Pollynet_Processing_Chain/gdas1",
-    "defaultsFile_folder": "C:/Users/Wiesen/Programmierwiesen/Pollynet/Pollynet_Processing_Chain/Pollynet_Processing_Chain/lib/pollyDefaults",
+    "defaultsFile_folder": "C:/Users/Wiesen/Programmierwiesen/Pollynet/Pollynet_Processing_Chain/lib/pollyDefaults",
     "results_folder": "C:/Users/Wiesen/Programmierwiesen/Pollynet/Pollynet_Processing_Chain/results", 
     "pic_folder": "C:/Users/Wiesen/Programmierwiesen/Pollynet/Pollynet_Processing_Chain/recent_plots", 
     "pollynet_config_link_file": "C:/Users/Wiesen/Programmierwiesen/Pollynet/Pollynet_Processing_Chain/config/template_pollynet_processing_chain_config_links.xlsx",
